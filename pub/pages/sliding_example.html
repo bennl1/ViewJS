@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <title>JS Libraries</title>
+
+        <!------- Loading JS scripts ------->
+        <!-- When loading JS scripts, considerations should be made regarding when
+            the DOM is being loaded, and when different scripts 
+            depend on each other. Below are examples of a few different ways to load the scripts.
+
+        -->
+        <!-- Load any CSS before the JS in case you need to access styles in your scripts. -->
+        <link rel="stylesheet" type="text/css" href="../style.css">
+        <link rel="stylesheet" type="text/css" href="../style_example.css">
+        <!-- 'defer' states that the script should be executed after the HTML is parsed.
+            If multiple scripts have 'defer', they are loaded one after the other.  
+            This will guarantee execution order, and ensure that scripts that depend on each other load
+            in an order that will not cause errors. -->
+        <!-- First we load jquery from a Google CDN (content delivery network). -->
+        <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <!-- Then we load a script that depends on jQuery -->
+        <script defer type="text/javascript" src='../js/view.js'></script>
+        <!-- Then we load a script that depends on our libraries (and jQuery) -->
+        <script defer type="text/javascript" src='../js/example.js'></script>
+
+
+    </head>
+<body>
+    <div id = 'sidePanel'>
+    </div>
+    <div id="instruction_container">
+        <p class = "instruction">
+            First, click on the button on the top left. After the panel shows up, 
+            click and drag the grey side bar to expand/shrink your side panel.
+            At any time, you can also click the show/hide button to show or hide
+            the panel.
+        </p>
+        <p class = "instruction">
+            Hover on the grey side bar will also display the usage.
+        </p>
+        <p class = "instruction">
+            This is very useful in cases where the user has a smaller screen or 
+            just the wide panel blocks his/her view. Then, he/she can use this feature
+            to adjust the width of the panel of his/her desire.
+        </p>
+        <img class = "instruction" src = "../img/sliding.png" height="auto" width="550px"/>
+    </div>
+    <div id="examples_container">
+        <a href = "../example.html">
+            <button class = "example_btn">Back to Home</button>
+        </a>
+        <a href = "exchangeSideNav_example.html">
+            <button class = "example_btn">Swap Example</button>
+        </a>
+    </div>
+    <div id="doc_container">
+        <a href = "documentation.html">
+            <button class = "doc_btn">Doc & API</button>
+        </a>
+    </div>
+    
+</body>
+
+</html>

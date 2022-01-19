@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <title>JS Libraries</title>
+
+        <!------- Loading JS scripts ------->
+        <!-- When loading JS scripts, considerations should be made regarding when
+            the DOM is being loaded, and when different scripts 
+            depend on each other. Below are examples of a few different ways to load the scripts.
+
+        -->
+        <!-- Load any CSS before the JS in case you need to access styles in your scripts. -->
+        <link rel="stylesheet" type="text/css" href="../style_doc.css">
+
+        <!-- 'defer' states that the script should be executed after the HTML is parsed.
+            If multiple scripts have 'defer', they are loaded one after the other.  
+            This will guarantee execution order, and ensure that scripts that depend on each other load
+            in an order that will not cause errors. -->
+        <!-- First we load jquery from a Google CDN (content delivery network). -->
+
+
+    </head>
+<body>
+    <div id = "start_container">
+        <h2 className = "start">Getting Started</h2>
+        <p className = "start">
+            To get started on using the library, please include the view.js script file,
+            as well as the style.css in your html file. Also, since the library utilizes external
+            library 'jQuery', please also include jQuery in your html file as well.(Note: the 
+            current link for including jQuery is following: https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js).
+        </p>
+        <p className = "start">
+            Below are some implementation of several basic functionalities. For more details of all the functionalities, please see the API section below.
+        </p>
+        <p>
+            <span><h3>Adding sections: </h3></span>user adds the sections to display in the list to fill the panels.
+        </p>
+        <img src="../img/add_sections.png"/>
+        <p>
+            <span><h3>Sliding side panel: </h3></span>user can drag to widen or narrow the width of the side panel.
+        </p>
+        <img src="../img/sliding.png"/>
+        <p>
+            <span><h3>Drag and drop: </h3></span>user can drag and drop sections to rearrange the order.
+        </p>
+        <img src="../img/drag_and_drop.png"/>
+        <p>
+            <span><h3>Swap between format/layout: </h3></span>user can change the layout of the panel through clicking the button.
+        </p>
+        <img src="../img/swap.png"/>
+
+    </div>
+
+    <div id = "api_container">
+        <h2>API</h2>
+        <p>
+            Below are the details of all the objects and functions in the library.
+        </p>
+        <br/>
+        
+        <h3>Objects</h3>
+        <ul>
+            <li><p>
+                <span><h3>createToggleButton()</h3></span>To create the toggler button appeared on the top left of the page, used to
+                show or hide the side panel.
+            </p></li>
+            <li><p>
+                <span><h3>createSliderButton()</h3></span>To create the grey vertical bar appeared on the side of the panel, used to
+                dynamically change the width of the side panel.
+            </p></li>
+            <li><p>
+                <span><h3>navAndSideExchange() </h3></span>To create the SWAP button to interchange between horizontal and vertical layout.
+            </p></li>
+        </ul>
+        <br/><br/>
+        <h3>Functions</h3>
+        <ul>
+            <li><p>
+                <span><h3>addSection(sectionName)</h3></span>To insert a new section in the section list of the side panel,
+                the name will be specified by the argument "sectionName".
+            </p></li>
+            <li><p>
+                <span><h3>removeSection(sectionName)</h3></span>To delete a previously defined section from the section list of
+                the side panel, the section to be deleted is specified by the argument "sectionName".
+            </p></li>
+            <li><p>
+                <span><h3>addNestedSections(parentSectionName, nestedSubs)</h3></span>To insert a nested list under a previously defined
+                section from the section list of the side panel. The section the nested list to be inserted, is specified by the argument
+                parentSectionName, and the nested list is specified by nestedSubs, which is an array of section names to insert.
+            </p></li>
+            <li><p>
+                <span><h3>showHideNested()</h3></span>To hide or show the nested list inserted. This function enables the nested list to be 
+                displayed, otherwise the nested list is set as "displayed = 'none'" by default.
+            </p></li>
+            <li><p>
+                <span><h3>sliding()</h3></span>To achieve the dragging functionality for the side panel, it dynamically monitors the mouse position
+                upon clicked, and adjust the width of the side panel according to the current mouse position with respect to the position when the slider
+                is clicked.
+            </p></li>
+            <li><p>
+                <span><h3>dragAndDrop()</h3></span>To enable the functionality of the drag and drop to reorder the section list. The sections are set
+                to have attribute of draggable to be true, and this function monitors which section is being dragged through event listener, and determines
+                from mouse position to determine where its dropped location.
+            </p></li>
+            <li><p>
+                <span><h3>toNav()</h3></span>To enable the swap between horizontal and vertical format, this function specifies the style and all the settings and 
+                specifications for the horizontal layout, for all of the objects.
+            </p></li>
+            <li><p>
+                <span><h3>toSide()</h3></span>To enable the swap between horizontal and vertical format, this function specifies the style and all the settings and 
+                specifications for the vertical layout, for all of the objects.
+            </p></li>
+            <li><p>
+                <span><h3>navAndSideExchange()</h3></span>With the previous two functions, namely toNav() and toSide(), this function creates the "SWAP" button and uses 
+                if statement to determine the current layout mode, and swaps/toggles to the other one.
+            </p></li>
+        </ul>
+        
+
+    </div>
+
+    <div id="home_btn_container">
+        <a href = "../example.html">
+            <button class = "home_btn">Back to Home</button>
+        </a>
+    </div>
+    
+</body>
+
+</html>
